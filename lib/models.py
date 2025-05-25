@@ -7,7 +7,7 @@ convention = {
 }
 metadata = MetaData(naming_convention=convention)
 
-engine = create_engine('sqlite:///freebies.db')
+engine = create_engine('sqlite:///lib/freebies.db')
 
 Base = declarative_base(metadata=metadata)
 
@@ -77,8 +77,6 @@ class Freebie(Base):
         
     def print_details(self):
         return f"{self.dev.name} owns a {self.item_name} from {self.company.name}."
-
-
 
 
 Session = sessionmaker(bind=engine)
